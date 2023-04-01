@@ -8,11 +8,14 @@ import Publicar from "./pages/publicar/Publicar";
 import Perfil from "./pages/perfil/Perfil";
 import NotFound from "./pages/notFound/NotFound";
 
+import Navbar from "./components/navbar/Navbar";
+
 
 function App() {
 
   return (
     <BrowserRouter>
+    <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/reportes" element={< Reportes />} />

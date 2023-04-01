@@ -3,17 +3,10 @@ import { useNavigate} from 'react-router-dom';
 
 const Home = () => {
 
-const navigate =  useNavigate();
-
-const handleLogin = () => {
-  localStorage.setItem('token', 'true');
-   navigate('/perfil')
-}
 
   return (
     <div>
-        <h1>Aquí eta el login momentaneamente</h1>
-   <button onClick={handleLogin}>Login</button>
+        <h1>Bienvenido a nuestro sitio web</h1>
    
     </div>
   )
