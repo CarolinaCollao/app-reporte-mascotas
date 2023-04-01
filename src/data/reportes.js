@@ -1,20 +1,20 @@
 export const reportes =[
     {
-        id:01,
+        id: '1',
         name: 'Misifus',
         category: 'gato',
         raza: 'domestico',
         state: 'extraviado'
     },
     {
-        id:02,
+        id: '2',
         name: 'Firulais',
         category: 'perro',
         raza: 'poodle',
         state: 'extraviado'
     },
     {
-        id:03,
+        id: '3',
         name: 'Lupita',
         category: 'perro',
         raza: 'mestizo',

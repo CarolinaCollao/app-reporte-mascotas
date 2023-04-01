@@ -1,4 +1,12 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ProtectedRouter from "./router/ProtectedRouter";
+
+import Home from "./pages/home/Home";
+import Reportes from "./pages/reportes/Reportes";
+import Detalle from "./pages/detalle/Detalle";
+import Publicar from "./pages/publicar/Publicar";
+import Perfil from "./pages/perfil/Perfil";
+import NotFound from "./pages/notFound/NotFound";
 
 
 function App() {
@@ -6,14 +14,16 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<div>Estoy en ruta raíz</div>}/>
-        <Route path="/reportes" element={<div>Reportes</div>}/>
-      
-      
-        <Route path="/publicar" element={<div>Publicar</div>}/>
-        <Route path="/perfil" element={<div>Perfil</div>}/>
+        <Route path="/" element={<Home />} />
+        <Route path="/reportes" element={< Reportes />} />
+        <Route path="/reportes/:reporteId" element={< Detalle />} />
 
-        <Route path="*" element={<div>Ruta no existe</div>}/>
+        <Route element= { <ProtectedRouter />}>
+          <Route path="/publicar" element={<Publicar />} />
+          <Route path="/perfil" element={<Perfil />} />
+        </Route>
+
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   )
