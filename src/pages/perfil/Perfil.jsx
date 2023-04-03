@@ -7,14 +7,16 @@ const Perfil = () => {
   const navigateLogOut = useNavigate();
 
   const handleLogOut = () => {
-  
+
     navigateLogOut('/')
   }
 
   return (
     <div className='perfil-container'>
-      <h1>Perfil</h1>
-      <button className='perfil-button' onClick={handleLogOut}>Volver al home</button>
+      <div className='perfil-content'>
+        <h1>Perfil</h1>
+        <button className='perfil-button' onClick={handleLogOut}>Volver al home</button>
+      </div>
     </div>
   )
 }

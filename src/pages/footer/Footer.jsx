@@ -3,8 +3,10 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className='footer-container'>Fotter </footer>
-   
+    <footer className='footer-container'>
+ <p>fotter</p>
+    </footer>
+
   )
 }
 

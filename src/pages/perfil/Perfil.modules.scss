@@ -3,10 +3,21 @@
 
 
 .perfil-container {
-    @include main-container;
+    padding: auto;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     display: flex;
-    background-color: $bg-ligth;
+    background-color: $bg-ligth; 
+    font-family: $font-basic;
+}
+
+.perfil-content {
+    height: 80vh;
+    padding-top: 10rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 
     .perfil-button {
         @include button-ligth;

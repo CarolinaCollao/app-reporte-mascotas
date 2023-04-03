@@ -16,18 +16,18 @@ function App() {
 
   return (
     <BrowserRouter>
-    <Navbar />
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/reportes" element={< Reportes />} />
         <Route path="/reportes/:reporteId" element={< Detalle />} />
+        <Route path="*" element={<NotFound />} />
 
-        <Route element= { <ProtectedRouter />}>
+        <Route element={<ProtectedRouter />}>
           <Route path="/publicar" element={<Publicar />} />
           <Route path="/perfil" element={<Perfil />} />
         </Route>
-
-        <Route path="*" element={<NotFound />} />
+        
       </Routes>
       <Footer />
     </BrowserRouter>

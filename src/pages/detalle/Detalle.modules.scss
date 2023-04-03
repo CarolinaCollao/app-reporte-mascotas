@@ -1,9 +1,51 @@
 @import '../../scss/abstract/variables';
 @import '../../scss/abstract/mixins';
 
-.detalle-container {
-    @include main-container;
+
+.detalle.container {
+    padding: auto;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     display: flex;
-    background-color: rgb(8, 8, 8);
+    background-color: $bg-ligth;
+    font-family: $font-basic;
+    font-weight: 300;
+}
+
+.detalle-content {
+    padding-top: 10rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 2rem;
+
+    .detalle-card {
+        width: 80vh;
+        flex-direction: column;
+    }
+
+    .detalle-img {
+        border-radius: 8px;
+        max-height: 200px;
+
+
+        .img {
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+    .detalle-info {
+        color: $text-ligth;
+        background-color: $secondary-color;
+        height: 10rem;
+    }
+
+
+    .detalle-button {
+        @include button-ligth;
+        background-color: rgb(37, 73, 30);
+    }
+
 }

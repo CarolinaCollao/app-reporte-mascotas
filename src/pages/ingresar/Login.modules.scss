@@ -1,9 +1,20 @@
 @import '../../scss/abstract/variables';
 @import '../../scss/abstract/mixins';
 
+
+
 .login-container {
-    @include main-container;
+    padding: auto;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     display: flex;
-    background-color: rgb(8, 8, 8);
+    background-color: $bg-ligth;
+}
+
+.login-content {
+    padding-top: 10rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }

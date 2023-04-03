@@ -2,8 +2,11 @@
 @import '../../scss/abstract/mixins';
 
 .footer-container {
-    @include little-container;
+    height: 20vh;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     display: flex;
-    background-color: rgb(1, 10, 4);
+    display: flex;
+    background-color: rgb(7, 27, 14);
 }

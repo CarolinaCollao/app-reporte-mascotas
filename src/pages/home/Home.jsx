@@ -2,7 +2,7 @@ import './Home.modules.scss'
 
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Categorias } from '../../components/categorias/Categorias';
+
 
 
 
@@ -19,9 +19,15 @@ const Home = () => {
         </div>
       </div>
 
-      <div>
-        <Categorias />
-      </div>
+      <div className='categorias-container'>
+            <div className='categoria-content'>
+                <div className='categoria-item'>1</div>
+                <div className='categoria-item'>2</div>
+                <div className='categoria-item'>3</div>
+                <div className='categoria-item'>4</div>
+
+            </div>
+        </div>
 
     </>
   )

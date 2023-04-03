@@ -1,12 +1,16 @@
 @import '../../scss/abstract/variables';
 @import '../../scss/abstract/mixins';
 
-.notfound-container {
-    @include main-container;
-    text-align: center;
-    display: flex;
-    background-color: $highlight-color;
-    font-family: $font-basic;
+    .notfound-container {
+        padding: auto;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        display: flex;
+        background-color: $bg-ligth;
+        font-family: $font-basic;
+    
+    
     
     .notfound-column {
         width: 50%;
