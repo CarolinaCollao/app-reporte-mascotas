@@ -1,0 +1,9 @@
+@import '../../scss/abstract/variables';
+@import '../../scss/abstract/mixins';
+
+.footer-container {
+    @include little-container;
+    text-align: center;
+    display: flex;
+    background-color: rgb(1, 10, 4);
+}

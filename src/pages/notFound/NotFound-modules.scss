@@ -1,0 +1,45 @@
+@import '../../scss/abstract/variables';
+@import '../../scss/abstract/mixins';
+
+.notfound-container {
+    @include main-container;
+    text-align: center;
+    display: flex;
+    background-color: $highlight-color;
+    font-family: $font-basic;
+    
+    .notfound-column {
+        width: 50%;
+       
+        .notfound-img {
+            height: 30rem;
+            text-align: left;
+        }
+
+        .notfound-subtitle {
+            font-size: $md;
+            text-transform: uppercase;
+            color: $text-ligth;
+        }
+
+        .notfound-title {
+            font-size: $xxl;
+            color: $secondary-color;
+        }
+
+        .notfound-error {
+            font-size: $md;
+            color: $text-ligth;
+            margin-bottom: 2rem;
+            
+        }
+
+        .notfound-button {
+              @include button-ligth;
+     
+          
+        }
+
+
+    }
+}

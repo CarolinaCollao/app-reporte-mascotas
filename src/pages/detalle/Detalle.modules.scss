@@ -1,0 +1,9 @@
+@import '../../scss/abstract/variables';
+@import '../../scss/abstract/mixins';
+
+.detalle-container {
+    @include main-container;
+    text-align: center;
+    display: flex;
+    background-color: rgb(8, 8, 8);
+}

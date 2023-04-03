@@ -7,6 +7,7 @@ import Detalle from "./pages/detalle/Detalle";
 import Publicar from "./pages/publicar/Publicar";
 import Perfil from "./pages/perfil/Perfil";
 import NotFound from "./pages/notFound/NotFound";
+import Footer from "./pages/footer/Footer";
 
 import Navbar from "./components/navbar/Navbar";
 
@@ -28,6 +29,7 @@ function App() {
 
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   )
 }

@@ -1,3 +1,5 @@
+import './Detalle.modules.scss'
+
 import React from 'react';
 import { useParams } from 'react-router-dom';
 
@@ -13,8 +15,10 @@ const Detalle = () => {
   console.log(reporteSelected);
 
   return (
+    <div className='detalle.container'> 
     <div>
      {reporteSelected.name}
+    </div>
     </div>
   )
 }

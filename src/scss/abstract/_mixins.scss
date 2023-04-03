@@ -1,0 +1,64 @@
+
+
+@mixin main-container {
+    height: 80vh;
+    padding: auto;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+@mixin home-container {
+    height:80vh;
+    padding: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin middle-container {
+    height: 50vh;
+    padding: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin little-container {
+    height: 15vh;
+    padding: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+@mixin button-black {
+    margin: .3rem;
+    height: 2rem;
+    padding: .5rem 2rem;
+    font-size: .8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 25px;
+    border: none;
+    background-color: rgba(9, 141, 18, 0.87);
+    width: 90%;
+    color: $text-ligth;
+    cursor: pointer;
+
+}
+
+@mixin button-ligth {
+    margin: .3rem;
+    height: 2rem;
+    padding: .5rem 2rem;
+    font-size: .8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 25px;
+    border: none;
+    background-color: rgba(169, 204, 12, 0.548);
+    width: 90%;
+    color: $text-ligth;
+    cursor: pointer;
+
+}

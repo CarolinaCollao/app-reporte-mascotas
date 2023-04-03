@@ -1,0 +1,27 @@
+@import '../../scss/abstract/variables';
+@import '../../scss/abstract/mixins';
+
+.categorias-container {
+    @include middle-container;
+    text-align: center;
+    display: flex;
+    background-color: $bg-ligth;
+
+    .categoria-content {
+
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+
+
+        .categoria-item {
+            width: 10rem;
+            height: 10rem;
+            background-color: $secondary-color;
+            border-radius: 50%;
+            align-content: center;
+            margin: auto;
+        }
+    }
+}

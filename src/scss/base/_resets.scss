@@ -1,0 +1,24 @@
+@import '../abstract/variables';
+@import '../abstract/mixins';
+@import './base';
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    border: none;
+    background: none;
+    font-family: $font-basic;
+    color: $primary-color;
+}
