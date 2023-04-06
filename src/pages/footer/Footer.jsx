@@ -4,7 +4,7 @@ import React from 'react';
 const Footer = () => {
   return (
     <footer className='footer-container'>
- <p>fotter</p>
+ <p>Carolina Collao -2023</p>
     </footer>
 
   )

@@ -1,16 +1,17 @@
 import { useNavigate } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
-
+import { FaFacebookSquare, FaInstagramSquare, FaTwitterSquare } from "react-icons/fa";
 import './Navbar.modules.scss'
 
 const Navbar = () => {
 
-  const navigateLogin = useNavigate();
+  const navigateGoLogin = useNavigate();
   const navigateLogOut = useNavigate();
 
-  const handleLogin = () => {
+
+  const goLogin = () => {
     localStorage.setItem('token', 'true');
-    navigateLogin('/perfil')
+    navigateGoLogin('/login')
   }
 
   const handleLogOut = () => {
@@ -33,13 +34,13 @@ const Navbar = () => {
             
           <div className='navbar-top'>
             <div className='navbar-social'>
-              <p>Facebook</p>
-              <p>Instagram</p>
-              <p>TikTok</p>
+              <span className='social-icon'><FaFacebookSquare/></span>
+              <span className='social-icon'><FaInstagramSquare /></span>
+              <span className='social-icon'><FaTwitterSquare /></span>
             </div>
 
             <div className='navbar-login'>
-              <button className='button-black' onClick={handleLogin}>Login</button>
+              <button className='button-black' onClick={goLogin}>Login</button>
               <button className='button-ligth'  onClick={handleLogOut}>Salir</button>
             </div>
           </div>

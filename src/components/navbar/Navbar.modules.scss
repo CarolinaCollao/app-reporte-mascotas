@@ -17,7 +17,7 @@
         margin: 1rem;
         color: $text-ligth;
         font-family: $font-fantasy;
-        //    z-index: 5;
+       font-size: $md;
     }
 
     .navbar-container {
@@ -35,6 +35,11 @@
                 justify-content: space-around;
                 align-items: center;
                 color: $text-ligth;
+
+                .social-icon {
+                    font-size: 1.5rem;
+                    margin: 0.7rem 1rem 0.5rem 0;
+                }
 
             }
 

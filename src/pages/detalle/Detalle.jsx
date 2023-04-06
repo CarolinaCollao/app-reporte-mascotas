@@ -1,7 +1,7 @@
 import './Detalle.modules.scss'
 
 import React from 'react';
-import { useParams,  useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 import { reportes } from '../../data/reportes';
 
@@ -13,7 +13,7 @@ const Detalle = () => {
 
   const reporteSelected = reportes.find(reporte => reporte.id === reporteId);
 
-  const returnReportes =  () => {
+  const returnReportes = () => {
     navigateReturn('/reportes')
   }
 
@@ -24,17 +24,22 @@ const Detalle = () => {
     <div className='detalle-container'>
       <div className='detalle-content'>
 
-        <div className='detalle-card'>
-          <div className='detalle-img'>
-            <img className='img' src={reporteSelected.img} />
-          </div>
+        <article key={reporteSelected.id} className='card'>
 
-          <div className='detalle-info'>
-            <h2 className='detalle-name'> {reporteSelected.name}</h2>
-            <div className='description-container'> <p className='detalle-description'> {reporteSelected.description}</p></div>
-            <button className='detalle-button' onClick={returnReportes} >volver a reportes</button>
-          </div>
-        </div>
+          <header className='header-card'>
+            <img className='card-img' src={reporteSelected.img} />
+          </header>
+
+
+          <footer className='footer-card'>
+             <div> <h2 className='nombre-text'>{reporteSelected.name}</h2> </div>
+             <p className='raza-text'>{reporteSelected.raza}</p>
+            <p className='description-text'>{reporteSelected.description}</p>
+
+           <button onClick={returnReportes} className='detalle-button'>Volver a reportes</button> 
+          </footer>
+
+        </article >
 
       </div>
     </div>
