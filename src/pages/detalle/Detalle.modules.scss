@@ -36,16 +36,11 @@
         }
     }
 
-    .detalle-info {
-        color: $text-ligth;
-        background-color: $secondary-color;
-        height: 10rem;
-    }
-
-
     .detalle-button {
         @include button-ligth;
         background-color: rgb(37, 73, 30);
+        margin: 1rem;
+        
     }
 
 }

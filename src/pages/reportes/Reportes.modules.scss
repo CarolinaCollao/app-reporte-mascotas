@@ -11,12 +11,18 @@
     font-family: $font-basic;
     font-weight: 300;
 
+  .reportes-form {
+            height: 10rem;
+            display: flex-start;
+        }
+
     .reportes-content {
         padding-top: 10rem;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
 
+      
 
         .card {
             max-width: 20rem;

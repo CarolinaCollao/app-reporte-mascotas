@@ -9,29 +9,34 @@ const Reportes = () => {
   return (
     <>
       <div className='reportes-container'>
+          <div className='reportes-form'>
+            <form>
+              <input
+                className="form-control"
+                type="text"
+                placeholder="Buscador"
+                name="title"
+              />
+
+              <select
+                className="form-control"
+                name="state"
+              >
+                <option value="pendiente">Perro</option>
+                <option value="completado">Gato</option>
+                <option value="completado">Conejo</option>
+              </select>
+              <div>
+                <button
+                  className="btn btn-primary"
+                  type="submit">
+                  filtrar
+                </button>
+              </div>
+            </form>
+          </div>
         <div className='reportes-content'>
 
-          <div className='reportes-input'>
-
-           <div>
-            <label>Buscar</label>
-            <input type="search" name="" id="" />
-           </div>
-
-           <div>
-            <label>Buscar</label>
-            
-           </div>
-
-           <div>
-            <label>Categorias</label>
-            <select name="" id="">
-              <option>Mascota encontrada</option>
-              <option>Mascota Buscada</option>
-            </select>
-           </div>
-
-          </div>
 
 
           {
