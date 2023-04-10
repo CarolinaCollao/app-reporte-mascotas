@@ -4,19 +4,21 @@ export const Context = createContext({});
 
 export const ContextProvider = (props) => {
 
-    const [conectado, setConectado] = useState(false);
+    const [conectado, setConectado] = useState({});
 
 
     const lstUsuarios = [
         {
             user: 'Juan',
             email: 'juan@juan.com',
-            password: '111'
+            password: '111',
+            estado: false
         },
         {
             user: 'Sara',
             email: 'sara@sara.com',
-            password: '222'
+            password: '222',
+            estado: false
         },
     ]
 

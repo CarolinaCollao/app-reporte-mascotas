@@ -35,7 +35,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/registrarse" element={<Registrarse />} />
 
-          {conectado &&
+          {conectado.estado &&
             <>
               <Route path="/homeprivado" element={<HomePrivado />} />
               <Route path="/publicar" element={<Publicar />} />

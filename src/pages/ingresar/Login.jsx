@@ -21,7 +21,7 @@ const Login = () => {
     const usuarioValido = lstUsuarios.find((usuario) => usuario.email === userMail && usuario.password === userPassword)
 
     if (usuarioValido) {
-      setConectado(true)
+      setConectado({estado:true, email: usuarioValido.email })
       navigate('/homeprivado')
     } else {
 
@@ -40,12 +40,12 @@ const Login = () => {
     <div className='login-container'>
       <div className='login-content'>
         <form className='form'>
-          <div className="form-content" controlId="formBasicEmail">
+          <div className="form-content" >
             <label className="label-mail">Correo Electrónico</label>
             <input className="label-input" type="email" placeholder='Ingresa tu mail' onChange={(e) => setUserMail(e.target.value)} />
           </div>
 
-          <div className="form-content" controlId="formBasicPassword">
+          <div className="form-content" >
             <label className="label-mail">Contraseña</label>
             <input className="label-input" type="password" placeholder='Ingresa tu clave' onChange={(e) => setUserPassword(e.target.value)} />
           </div>

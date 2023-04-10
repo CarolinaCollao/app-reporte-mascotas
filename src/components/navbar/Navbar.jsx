@@ -15,7 +15,7 @@ const Navbar = () => {
   }
 
   const handleLogOut = () => {
-    setConectado(false)
+    setConectado({estado:false, email: '' })
     navigate('/')
   }
 
@@ -30,7 +30,7 @@ const Navbar = () => {
             LOGO
           </div>
 
-          <div navbar-menu>
+          <div className='navbar-menu' >
 
             <div className='navbar-top'>
               <div className='navbar-social'>
@@ -40,7 +40,7 @@ const Navbar = () => {
               </div>
 
               <div className='navbar-login'>
-                <span></span>
+                <span>{conectado.email}</span>
                 <button className='button-black' onClick={() => handleLogin()}>Login</button>
                 <button className='button-ligth' onClick={() => handleLogOut()}>Salir</button>
               </div>
@@ -52,7 +52,7 @@ const Navbar = () => {
                 <NavLink className='navbar-navegation-item' to='/'>Home</NavLink>
                 <NavLink className='navbar-navegation-item' to='/reportes'>Reportes</NavLink>
                 {
-                  conectado ?
+                  conectado.estado ?
                     <>
                       <NavLink className='navbar-navegation-item' to='/perfil'>Perfil</NavLink>
                       <NavLink className='navbar-navegation-item' to='/publicar'>Publicar</NavLink>
