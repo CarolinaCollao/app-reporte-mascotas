@@ -1,4 +1,4 @@
-import NavPrivado from '../../components/navprivado/NavPrivado';
+
 import './Perfil.modules.scss';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -14,8 +14,7 @@ const Perfil = () => {
   }
 
   return (
-    <div className='vistas-privadas'> 
-    <NavPrivado />
+
     <div className='perfil-container'>
       <div className='perfil-content'>
 
@@ -69,7 +68,7 @@ const Perfil = () => {
 
 
       </div>
-    </div>
+
   )
 }
 

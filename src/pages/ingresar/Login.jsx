@@ -19,11 +19,8 @@ const navigate = useNavigate();
     const usuarioValido = lstUsuarios.find((usuario) => usuario.email === userMail && usuario.password === userPassword)
 
     if (usuarioValido) {
-      alert('usuario Valido')
       setConectado(true)
       navigate('/homeprivado')
-
-
     } else {
 
       alert('usuario errado')

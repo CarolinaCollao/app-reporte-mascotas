@@ -1,14 +1,8 @@
 @import '../../scss/abstract/variables';
 @import '../../scss/abstract/mixins';
 
-
-.vistas-privadas {
-
-padding-top: 6.5rem;
-
-
 .login-container {
-    height: 60vh;
+    height: 80vh;
     padding: auto;
     justify-content: center;
     align-items: center;
@@ -25,4 +19,3 @@ padding-top: 6.5rem;
     }
 }
 
-}

@@ -7,17 +7,15 @@ import { Context } from '../../context/Context';
 
 const Navbar = () => {
 
-  const { lstUsuarios, setConectado } = useContext(Context);
+  const { lstUsuarios, conectado, setConectado } = useContext(Context);
   const navigate = useNavigate();
 
 
   const handleLogin = () => {
-    /*   localStorage.setItem('token', 'true'); */
     navigate('/login')
   }
 
   const handleLogOut = () => {
-    /*  localStorage.removeItem('token'); */
     setConectado(false)
     navigate('/')
   }
@@ -43,6 +41,7 @@ const Navbar = () => {
               </div>
 
               <div className='navbar-login'>
+                <span></span>
                 <button className='button-black' onClick={handleLogin}>Login</button>
                 <button className='button-ligth' onClick={handleLogOut}>Salir</button>
               </div>
@@ -53,8 +52,16 @@ const Navbar = () => {
               <div className='navbar-navegation'>
                 <NavLink className='navbar-navegation-item' to='/'>Home</NavLink>
                 <NavLink className='navbar-navegation-item' to='/reportes'>Reportes</NavLink>
-                <NavLink className='navbar-navegation-item' to='/publicar'>Publicar</NavLink>
-                <NavLink className='navbar-navegation-item' to='/perfil'>Perfil</NavLink>
+               
+                {
+                  conectado ?
+                    <>
+                      <NavLink className='navbar-navegation-item' to='/perfil'>Perfil</NavLink> 
+                      <NavLink className='navbar-navegation-item' to='/publicar'>Publicar</NavLink> 
+                    </>  
+                      : <h3>LogOut</h3>
+                    
+              }
               </div>
             </div>
 
