@@ -1,0 +1,28 @@
+@import '../../scss/abstract/variables';
+@import '../../scss/abstract/mixins';
+
+
+.vistas-privadas {
+
+padding-top: 6.5rem;
+
+
+.login-container {
+    height: 60vh;
+    padding: auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    background-color: $bg-ligth;
+
+
+    .login-content {
+    
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+}

@@ -1,8 +1,11 @@
+import NavPrivado from '../../components/navprivado/NavPrivado';
 import './Publicar.modules.scss';
 import React from 'react'
 
 const Publicar = () => {
   return (
+    <div className='vistas-privadas'> 
+    <NavPrivado />
     <div className='publicar-container'>
       <div className='publicar-content'>
 
@@ -37,6 +40,8 @@ const Publicar = () => {
 
         </div>
       </div>
+      </div>
+
    
   )
 }
