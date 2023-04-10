@@ -2,7 +2,8 @@
 @import '../../scss/abstract/mixins';
 
     .notfound-container {
-        padding: auto;
+        height: 80vh;
+        padding-top: 5rem;
         justify-content: center;
         align-items: center;
         text-align: center;
@@ -16,30 +17,33 @@
         width: 50%;
        
         .notfound-img {
-            height: 30rem;
+            height: 25rem;
             text-align: left;
         }
 
         .notfound-subtitle {
             font-size: $md;
             text-transform: uppercase;
-            color: $text-ligth;
+            color: $text-dark;
         }
 
         .notfound-title {
             font-size: $xxl;
             color: $secondary-color;
+            
         }
 
         .notfound-error {
             font-size: $md;
             color: $text-ligth;
             margin-bottom: 2rem;
+            color: $text-dark;
             
         }
 
         .notfound-button {
               @include button-ligth;
+              color: $text-dark;
      
           
         }

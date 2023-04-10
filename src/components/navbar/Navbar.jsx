@@ -10,7 +10,6 @@ const Navbar = () => {
   const { lstUsuarios, conectado, setConectado } = useContext(Context);
   const navigate = useNavigate();
 
-
   const handleLogin = () => {
     navigate('/login')
   }
@@ -42,8 +41,8 @@ const Navbar = () => {
 
               <div className='navbar-login'>
                 <span></span>
-                <button className='button-black' onClick={handleLogin}>Login</button>
-                <button className='button-ligth' onClick={handleLogOut}>Salir</button>
+                <button className='button-black' onClick={() => handleLogin()}>Login</button>
+                <button className='button-ligth' onClick={() => handleLogOut()}>Salir</button>
               </div>
             </div>
 
@@ -52,16 +51,15 @@ const Navbar = () => {
               <div className='navbar-navegation'>
                 <NavLink className='navbar-navegation-item' to='/'>Home</NavLink>
                 <NavLink className='navbar-navegation-item' to='/reportes'>Reportes</NavLink>
-               
                 {
                   conectado ?
                     <>
-                      <NavLink className='navbar-navegation-item' to='/perfil'>Perfil</NavLink> 
-                      <NavLink className='navbar-navegation-item' to='/publicar'>Publicar</NavLink> 
-                    </>  
-                      : <h3>LogOut</h3>
-                    
-              }
+                      <NavLink className='navbar-navegation-item' to='/perfil'>Perfil</NavLink>
+                      <NavLink className='navbar-navegation-item' to='/publicar'>Publicar</NavLink>
+                    </>
+                    : <h3>LogOut</h3>
+
+                }
               </div>
             </div>
 

@@ -5,14 +5,16 @@ import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
 
+
+
   const [userMail, setUserMail] = useState('');
   const [userPassword, setUserPassword] = useState('');
 
-  const { lstUsuarios, setConectado } = useContext(Context);
+  const { lstUsuarios, conectado, setConectado } = useContext(Context);
   console.log(lstUsuarios)
+  console.log(conectado)
 
-
-const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const validarUsuario = () => {
 

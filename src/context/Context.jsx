@@ -4,7 +4,7 @@ export const Context = createContext({});
 
 export const ContextProvider = (props) => {
 
-    const [conectado, setConectado] = useState({});
+    const [conectado, setConectado] = useState(false);
 
 
     const lstUsuarios = [

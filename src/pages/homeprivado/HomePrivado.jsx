@@ -1,4 +1,4 @@
-import NavPrivado from '../../components/navprivado/NavPrivado';
+
 import './HomePrivado.modules.scss';
 import React from 'react'
 
