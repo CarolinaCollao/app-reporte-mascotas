@@ -6,7 +6,6 @@ import { useNavigate } from 'react-router-dom';
 const Login = () => {
 
 
-
   const [userMail, setUserMail] = useState('');
   const [userPassword, setUserPassword] = useState('');
 
@@ -30,11 +29,11 @@ const Login = () => {
     }
   }
 
-  /*
+
     const handleRegistrarse = () => {
-      navigateForm('/registrarse')
+      navigate('/registrarse')
     }
-  */
+
 
   return (
     <div className='login-container'>
@@ -53,14 +52,14 @@ const Login = () => {
           <button type='button' className='login-button' onClick={() => validarUsuario()}>Ingresar</button>
         </form>
 
-        {/*   
+     
         <div className="form-text">
           <p >¿Aún no tienes tu cuenta?</p>
           <button type="" className='input-button'
             onClick={handleRegistrarse}>
             Crear Cuenta</button> 
       </div>
-      */}
+
       </div>
 
     </div >
