@@ -8,17 +8,17 @@ const Registrarse = () => {
             <div className='registrarse-content'>
                 <form className='form'>
 
-                    <div className="form-content" controlId="formBasicPassword">
+                    <div className="form-content" >
                         <label className="label-mail">Nombre</label>
                         <input className="label-input" type="password" placeholder='Ingresa tu nombre' />
                     </div>
 
-                    <div className="form-content" controlId="formBasicEmail">
+                    <div className="form-content" >
                         <label className="label-mail">Correo Electrónico</label>
                         <input className="label-input" type="email" placeholder='Ingresa tu mail' />
                     </div>
 
-                    <div className="form-content" controlId="formBasicPassword">
+                    <div className="form-content" >
                         <label className="label-mail">Contraseña</label>
                         <input className="label-input" type="password" placeholder='*****' />
                     </div>

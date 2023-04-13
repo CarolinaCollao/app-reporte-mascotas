@@ -10,9 +10,9 @@ const Login = () => {
   const [userMail, setUserMail] = useState('');
   const [userPassword, setUserPassword] = useState('');
 
-  const { lstUsuarios, conectado, setConectado } = useContext(Context);
+  const { lstUsuarios, usuario, setUsuario } = useContext(Context);
   console.log(lstUsuarios)
-  console.log(conectado)
+  console.log(usuario)
 
   const navigate = useNavigate();
 
@@ -21,7 +21,7 @@ const Login = () => {
     const usuarioValido = lstUsuarios.find((usuario) => usuario.email === userMail && usuario.password === userPassword)
 
     if (usuarioValido) {
-      setConectado({estado:true, email: usuarioValido.email })
+      setUsuario({conectado:true, email: usuarioValido.email })
       navigate('/homeprivado')
     } else {
 
@@ -56,7 +56,6 @@ const Login = () => {
         {/*   
         <div className="form-text">
           <p >¿Aún no tienes tu cuenta?</p>
-
           <button type="" className='input-button'
             onClick={handleRegistrarse}>
             Crear Cuenta</button> 

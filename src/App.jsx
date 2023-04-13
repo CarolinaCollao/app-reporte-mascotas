@@ -19,9 +19,9 @@ import HomePrivado from './pages/homeprivado/HomePrivado';
 
 function App() {
 
-  const { conectado, setConectado } = useContext(Context);
+  const { usuario, setUsuario } = useContext(Context);
 
-  console.log(conectado)
+  console.log(usuario)
 
   return (
   
@@ -35,7 +35,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/registrarse" element={<Registrarse />} />
 
-          {conectado.estado &&
+          {usuario.conectado &&
             <>
               <Route path="/homeprivado" element={<HomePrivado />} />
               <Route path="/publicar" element={<Publicar />} />

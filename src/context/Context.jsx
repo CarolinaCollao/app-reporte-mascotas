@@ -4,7 +4,7 @@ export const Context = createContext({});
 
 export const ContextProvider = (props) => {
 
-    const [conectado, setConectado] = useState({});
+    const [usuario, setUsuario] = useState({});
 
 
     const lstUsuarios = [
@@ -12,17 +12,17 @@ export const ContextProvider = (props) => {
             user: 'Juan',
             email: 'juan@juan.com',
             password: '111',
-            estado: false
+            conectado: false
         },
         {
             user: 'Sara',
             email: 'sara@sara.com',
             password: '222',
-            estado: false
+            conectado: false
         },
     ]
 
-const globalContext = {lstUsuarios, conectado, setConectado}
+const globalContext = {lstUsuarios, usuario, setUsuario}
 
     return (
         <Context.Provider value={globalContext}>
