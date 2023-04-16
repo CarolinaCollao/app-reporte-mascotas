@@ -17,13 +17,15 @@ export const ContextProvider = (props) => {
             user: 'Juan',
             email: 'juan@juan.com',
             password: '111',
+            telefono: '932323232',
             conectado: false
         },
         {
-            idUsuario: '1',
+            idUsuario: '2',
             user: 'Sara',
             email: 'sara@sara.com',
             password: '222',
+            telefono: '932323232',
             conectado: false
         },
     ]

@@ -1,15 +1,16 @@
 import './Login.modules.scss';
-import { Context } from '../../context/Context';
 import React, { useContext, useState } from 'react';
+import { Context } from '../../context/Context';
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
 
+  const { lstUsuarios, usuario, setUsuario } = useContext(Context);
 
   const [userMail, setUserMail] = useState('');
   const [userPassword, setUserPassword] = useState('');
 
-  const { lstUsuarios, usuario, setUsuario } = useContext(Context);
+
   console.log(lstUsuarios)
   console.log(usuario)
 
@@ -20,7 +21,14 @@ const Login = () => {
     const usuarioValido = lstUsuarios.find((usuario) => usuario.email === userMail && usuario.password === userPassword)
 
     if (usuarioValido) {
-      setUsuario({conectado:true, email: usuarioValido.email })
+      setUsuario({
+        conectado: true,
+        idUsuario: usuarioValido.idUsuario,
+        user: usuarioValido.user,
+        email: usuarioValido.email,
+        password: usuarioValido.password,
+        telefono: usuarioValido.telefono,
+      })
       navigate('/homeprivado')
     } else {
 
@@ -30,9 +38,9 @@ const Login = () => {
   }
 
 
-    const handleRegistrarse = () => {
-      navigate('/registrarse')
-    }
+  const handleRegistrarse = () => {
+    navigate('/registrarse')
+  }
 
 
   return (
@@ -41,24 +49,24 @@ const Login = () => {
         <form className='form'>
           <div className="form-content" >
             <label className="label-mail">Correo Electrónico</label>
-            <input className="label-input" type="email" placeholder='Ingresa tu mail' onChange={(e) => setUserMail(e.target.value)} />
+            <input className="form-input" type="email" placeholder='Ingresa tu mail' onChange={(e) => setUserMail(e.target.value)} />
           </div>
 
           <div className="form-content" >
             <label className="label-mail">Contraseña</label>
-            <input className="label-input" type="password" placeholder='Ingresa tu clave' onChange={(e) => setUserPassword(e.target.value)} />
+            <input className="form-input" type="password" placeholder='Ingresa tu clave' onChange={(e) => setUserPassword(e.target.value)} />
           </div>
 
           <button type='button' className='login-button' onClick={() => validarUsuario()}>Ingresar</button>
         </form>
 
-     
+
         <div className="form-text">
           <p >¿Aún no tienes tu cuenta?</p>
           <button type="" className='input-button'
             onClick={handleRegistrarse}>
-            Crear Cuenta</button> 
-      </div>
+            Crear Cuenta</button>
+        </div>
 
       </div>
 
