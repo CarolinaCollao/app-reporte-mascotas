@@ -50,6 +50,7 @@ const Navbar = () => {
 
               <div className='navbar-navegation'>
                 <NavLink className='navbar-navegation-item' to='/'>Home</NavLink>
+                <NavLink className='navbar-navegation-item' to='/prueba'>Prueba</NavLink>
                 <NavLink className='navbar-navegation-item' to='/reportes'>Reportes</NavLink>
                 {
                   usuario.conectado ?

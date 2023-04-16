@@ -14,6 +14,7 @@ import Login from "./pages/ingresar/Login";
 import Navbar from "./components/navbar/Navbar";
 import Registrarse from "./pages/registrarse/Registrarse";
 import HomePrivado from './pages/homeprivado/HomePrivado';
+import Prueba from './pages/prueba/Prueba';
 
 
 
@@ -29,6 +30,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path='/prueba' element= {<Prueba /> } />
           <Route path="/reportes" element={< Reportes />} />
           <Route path="/reportes/:reporteId" element={< Detalle />} />
           <Route path="*" element={<NotFound />} />
