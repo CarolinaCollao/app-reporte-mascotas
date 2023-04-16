@@ -8,6 +8,7 @@ export const Context = createContext({});
 export const ContextProvider = (props) => {
 
     const [usuario, setUsuario] = useState({});
+    const [datosBase, setDatosBase] = useState([]);
 
     const [lstProductos, setLstProductos] = useState([]);
 
@@ -30,7 +31,7 @@ export const ContextProvider = (props) => {
         },
     ]
 
-    const globalContext = { lstUsuarios, usuario, setUsuario, lstProductos, setLstProductos }
+    const globalContext = { lstUsuarios, usuario, setUsuario, lstProductos, setLstProductos,datosBase, setDatosBase }
 
     return (
         <Context.Provider value={globalContext}>

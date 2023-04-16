@@ -39,14 +39,10 @@ const Navbar = () => {
                 <span className='social-icon'><FaTwitterSquare /></span>
               </div>
 
-     
+              <div className='navbar-login-user'>{usuario.user}</div>
 
-                  <div className='navbar-login-user'>{usuario.user}</div>
-            
-                <button className='button-ligth' onClick={() => handleLogOut()}>Salir</button>
-
-                <button className='button-black' onClick={() => handleLogin()}>Login</button>
-
+              <button className='button-black' onClick={() => handleLogin()}>Login</button>
+              <button className='button-ligth' onClick={() => handleLogOut()}>Salir</button>
 
             </div>
 

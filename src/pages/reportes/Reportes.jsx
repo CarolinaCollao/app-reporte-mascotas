@@ -1,14 +1,14 @@
 import './Reportes.modules.scss';
 import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-//import { reportes } from '../../data/reportes';
 import { Context } from '../../context/Context';
 import '../../data/data'
 
 
 const Reportes = () => {
 
-  const [datosBase, setDatosBase] = useState([]);
+  const { datosBase, setDatosBase } = useContext(Context);
+
   const [search, setSearch] = useState('');
 
   console.log('chao')

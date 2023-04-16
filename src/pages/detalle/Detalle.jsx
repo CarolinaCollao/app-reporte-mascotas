@@ -1,17 +1,18 @@
 import './Detalle.modules.scss'
-
-import React from 'react';
+import React, { useContext } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import { Context } from '../../context/Context';
 
-import { reportes } from '../../data/reportes';
 
 const Detalle = () => {
+
+  const { lstUsuarios, usuario, setUsuario, datosBase, setDatosBase } = useContext(Context);
 
   const navigateReturn = useNavigate();
 
   const { reporteId } = useParams();
 
-  const reporteSelected = reportes.find(reporte => reporte.id === reporteId);
+  const reporteSelected = datosBase.find(reporte => reporte.id === reporteId);
 
   const returnReportes = () => {
     navigateReturn('/reportes')
@@ -27,7 +28,7 @@ const Detalle = () => {
         <article key={reporteSelected.id} className='card'>
 
           <header className='header-card'>
-            <img className='card-img' src={reporteSelected.img} />
+            <img className='card-img' src={reporteSelected.img} alt={reporteSelected.name} />
           </header>
 
 

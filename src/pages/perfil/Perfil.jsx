@@ -2,11 +2,11 @@ import React, { useContext, useState } from 'react';
 import { Context } from '../../context/Context';
 import './Perfil.modules.scss';
 import { useNavigate } from 'react-router-dom';
-import { reportes } from '../../data/reportes'
+
 
 const Perfil = () => {
 
-  const { lstUsuarios, usuario, setUsuario } = useContext(Context);
+  const { lstUsuarios, usuario, setUsuario, datosBase, setDatosBase } = useContext(Context);
   const navigateLogOut = useNavigate();
 
   const [user, setUser] = useState(usuario.user);
@@ -33,9 +33,9 @@ const Perfil = () => {
     lstUsuarios[posicionUsuarioActual] = usuarioActualizado;
   }
 
-
+  //boton para volver a reportes
   const handleLogOut = () => {
-    navigateLogOut('/')
+    navigateLogOut('/reportes')
   }
 
   return (
@@ -67,7 +67,6 @@ const Perfil = () => {
                   onChange={(e) => setTelefono(e.target.value)} />
               </div>
 
-
               <div className='data-name' >
                 <label className="form-label">Contraseña</label>
                 <input className="form-input" type="texto"
@@ -75,38 +74,16 @@ const Perfil = () => {
                   onChange={(e) => setPassword(e.target.value)} />
               </div>
 
-
               <button type='button' className='data-button' onClick={() => actualizarUsuario()}>Actualizar Datos</button>
             </form>
-            <button className='perfil-button' onClick={handleLogOut}>Volver al home</button>
+            <button className='perfil-button' onClick={handleLogOut}>Volver a reportes</button>
 
           </div>
         </div>
-
-        {/*
-
-        <div className='perfil-data'>
-          <div className='data-name'>
-            <p>Nombre</p>
-            <p>Marcela Miranda</p>
-          </div>
-          <div className='data-name'>
-            <p>Correo Electrónico</p>
-            <p>marcela@mail.com</p>
-          </div>
-          <div className='data-name'>
-            <p>Clave</p>
-            <p>*******</p>
-          </div>
-
-          <button className='data-button'>Editar Datos</button>
-          <button className='perfil-button' onClick={handleLogOut}>Volver al home</button>
-        </div>
-*/}
 
         <div className='perfil-publicaciones'>
           {
-            reportes.map(reporte => (
+            datosBase.map(reporte => (
               <article key={reporte.id} className='card'>
 
                 <header className='header-card'>
