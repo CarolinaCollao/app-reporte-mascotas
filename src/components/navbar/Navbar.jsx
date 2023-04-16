@@ -15,7 +15,7 @@ const Navbar = () => {
   }
 
   const handleLogOut = () => {
-    setConectado({conectado:false, email: '' })
+    setConectado({ conectado: false, email: '' })
     navigate('/')
   }
 
@@ -39,11 +39,15 @@ const Navbar = () => {
                 <span className='social-icon'><FaTwitterSquare /></span>
               </div>
 
-              <div className='navbar-login'>
-                <span>{usuario.email}</span>
-                <button className='button-black' onClick={() => handleLogin()}>Login</button>
+     
+
+                  <div className='navbar-login-user'>{usuario.user}</div>
+            
                 <button className='button-ligth' onClick={() => handleLogOut()}>Salir</button>
-              </div>
+
+                <button className='button-black' onClick={() => handleLogin()}>Login</button>
+
+
             </div>
 
             <div className='navbar-bottom'>

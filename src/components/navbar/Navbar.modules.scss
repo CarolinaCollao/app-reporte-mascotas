@@ -17,7 +17,7 @@
         margin: 1rem;
         color: $text-ligth;
         font-family: $font-fantasy;
-       font-size: $md;
+        font-size: $md;
     }
 
     .navbar-container {
@@ -25,38 +25,50 @@
         justify-content: space-around;
         align-items: center;
 
-        .navbar-top {
-            display: flex;
-            justify-content: flex-end;
+        .navbar-menu {
+            justify-content: space-around;
 
-
-            .navbar-social {
+            .navbar-top {
                 display: flex;
                 justify-content: space-around;
-                align-items: center;
-                color: $text-ligth;
 
-                .social-icon {
-                    font-size: 1.5rem;
-                    margin: 0.7rem 1rem 0.5rem 0;
+                .navbar-social {
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: center;
+                    color: $text-ligth;
+                  
+
+                    .social-icon {
+                        font-size: 1.5rem;
+                        margin: 0.7rem 1rem 0.5rem 0;
+                    }
+
                 }
 
-            }
 
-            .navbar-login {
-                display: flex;
-                color: $text-ligth;
+                .navbar-login-user {
+                    width: 6rem;
+                    color: $text-ligth;
+                    padding-top: 1rem;
+                    text-align: center;
+                    font-family: $font-basic;
+                }
 
 
                 .button-black {
                     @include button-black;
+                    width: 6rem;
 
                 }
 
                 .button-ligth {
                     @include button-ligth;
+                    width: 6rem;
                 }
+
             }
+
 
         }
 
