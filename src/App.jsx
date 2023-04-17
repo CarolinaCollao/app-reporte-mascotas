@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Context } from './context/Context';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-//import ProtectedRouter from "./router/ProtectedRouter";
+
 
 import Home from "./pages/home/Home";
 import Reportes from "./pages/reportes/Reportes";

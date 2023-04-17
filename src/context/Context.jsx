@@ -31,7 +31,7 @@ export const ContextProvider = (props) => {
         },
     ]
 
-    const globalContext = { lstUsuarios, usuario, setUsuario, lstProductos, setLstProductos,datosBase, setDatosBase }
+    const globalContext = { lstUsuarios, usuario, setUsuario, lstProductos, setLstProductos, datosBase, setDatosBase }
 
     return (
         <Context.Provider value={globalContext}>
@@ -39,5 +39,3 @@ export const ContextProvider = (props) => {
         </Context.Provider>
     )
 }
-
-

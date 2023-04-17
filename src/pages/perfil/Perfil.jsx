@@ -6,20 +6,23 @@ import { useNavigate } from 'react-router-dom';
 
 const Perfil = () => {
 
-  const { lstUsuarios, usuario, setUsuario, datosBase, setDatosBase } = useContext(Context);
+  const {conectado, lstUsuarios, usuario, setUsuario, datosBase, setDatosBase } = useContext(Context);
   const navigateLogOut = useNavigate();
+  
 
   const [user, setUser] = useState(usuario.user);
   const [email, setEmail] = useState(usuario.email);
   const [telefono, setTelefono] = useState(usuario.telefono);
   const [password, setPassword] = useState(usuario.password);
+ 
+ console.log(usuario.idUsuario)
 
-  console.log(usuario.conectado)
+ const reportesUsuario = datosBase.filter((reporte) => reporte.idUsuario === reporte.idUsuario);
+ console.log(reportesUsuario)
 
   const actualizarUsuario = () => {
-    const posicionUsuarioActual = lstUsuarios.findIndex((u) => u.id === u.idUsuario)
-    console.log(posicionUsuarioActual)
-
+     const posicionUsuarioActual = lstUsuarios.findIndex((u) => u.id === u.idUsuario)
+  console.log(posicionUsuarioActual)
     const usuarioActualizado = {
       conectado: true,
       id: usuario.idUsuario,
@@ -37,6 +40,8 @@ const Perfil = () => {
   const handleLogOut = () => {
     navigateLogOut('/reportes')
   }
+
+
 
   return (
 
@@ -83,7 +88,7 @@ const Perfil = () => {
 
         <div className='perfil-publicaciones'>
           {
-            datosBase.map(reporte => (
+            reportesUsuario.map(reporte => (
               <article key={reporte.id} className='card'>
 
                 <header className='header-card'>
