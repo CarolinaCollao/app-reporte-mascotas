@@ -9,6 +9,9 @@ const Perfil = () => {
   const {conectado, lstUsuarios, usuario, setUsuario, datosBase, setDatosBase } = useContext(Context);
   const navigateLogOut = useNavigate();
   
+  console.log(lstUsuarios)
+  console.log('tortuga')
+  console.log(usuario.idUsuario)
 
   const [user, setUser] = useState(usuario.user);
   const [email, setEmail] = useState(usuario.email);
@@ -17,7 +20,7 @@ const Perfil = () => {
  
  console.log(usuario.idUsuario)
 
- const reportesUsuario = datosBase.filter((reporte) => reporte.idUsuario === reporte.idUsuario);
+ const reportesUsuario = datosBase.filter((reporte) => reporte.idUsuario === usuario.idUsuario);
  console.log(reportesUsuario)
 
   const actualizarUsuario = () => {
@@ -40,8 +43,6 @@ const Perfil = () => {
   const handleLogOut = () => {
     navigateLogOut('/reportes')
   }
-
-
 
   return (
 
@@ -100,8 +101,6 @@ const Perfil = () => {
                   <p className='raza-text'>{reporte.raza}</p>
                   <div> <span className='nombre-text'>{reporte.name}</span> </div>
 
-
-
                 </footer>
 
               </article >
@@ -111,10 +110,6 @@ const Perfil = () => {
 
         </div>
       </div>
-
-
-
-
 
 
     </div>

@@ -13,7 +13,6 @@ import Footer from "./pages/footer/Footer";
 import Login from "./pages/ingresar/Login";
 import Navbar from "./components/navbar/Navbar";
 import Registrarse from "./pages/registrarse/Registrarse";
-import HomePrivado from './pages/homeprivado/HomePrivado';
 import Prueba from './pages/prueba/Prueba';
 
 
@@ -39,7 +38,6 @@ function App() {
 
           {usuario.conectado &&
             <>
-              <Route path="/homeprivado" element={<HomePrivado />} />
               <Route path="/publicar" element={<Publicar />} />
               <Route path="/perfil" element={<Perfil />} />
             </>

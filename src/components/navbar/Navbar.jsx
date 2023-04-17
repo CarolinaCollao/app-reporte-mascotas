@@ -7,7 +7,7 @@ import { Context } from '../../context/Context';
 
 const Navbar = () => {
 
-  const { lstUsuarios, usuario, setUsuario } = useContext(Context);
+  const { lstUsuarios, usuario, setUsuario, conectado, setConectado } = useContext(Context);
   const navigate = useNavigate();
 
   const handleLogin = () => {
@@ -15,8 +15,8 @@ const Navbar = () => {
   }
 
   const handleLogOut = () => {
-    setConectado({ conectado: false, email: '' })
-    navigate('/')
+    setUsuario({ conectado: false, email: '' })
+    navigate('/reportes')
   }
 
 
@@ -55,8 +55,8 @@ const Navbar = () => {
                 {
                   usuario.conectado ?
                     <>
+                      <NavLink className='navbar-navegation-item' to='/publicar'>Publicar</NavLink> 
                       <NavLink className='navbar-navegation-item' to='/perfil'>Perfil</NavLink>
-                      <NavLink className='navbar-navegation-item' to='/publicar'>Publicar</NavLink>
                     </>
                     : <h3>LogOut</h3>
 

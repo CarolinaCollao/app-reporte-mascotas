@@ -6,20 +6,34 @@ import { useNavigate } from 'react-router-dom';
 
 const Publicar = () => {
 
-  const {lstGatos, setLstGatos} = useContext(Context);
+  const { usuario, setUsuario, datosBase, setDatosBase } = useContext(Context);
   const navigate = useNavigate();
-  
-  /*
-    const [petName, setPetName] = useState('');
-    const [petCategory, SetPetCategory] = useState('');
-    const [petRace, setPetRace] = useState('');
-    const [petDescription, SetPetDescription] = useState('');
-    const [petPhoto, SetPetPhoto] = useState('');
-  */
-  const [datoGato, setDatoGato] = useState('');
 
-  const publicarGato = () => {
-   // setLstGatos([...setLstGatos, { datoGato: data }]);
+  const [petId, setPetId] = useState('');
+  const [petStatus, setPetStatus] = useState('');
+  const [petName, setPetName] = useState('');
+  const [petCategory, SetPetCategory] = useState('');
+  const [petRace, setPetRace] = useState('');
+  const [petPhoto, SetPetPhoto] = useState('');
+  const [petState, setPetState] = useState('');
+  const [petDate, setPetdate] = useState('');
+  const [petDescription, SetPetDescription] = useState('');
+
+  const publicarReportes = () => {
+    setDatosBase([...datosBase,
+    {
+      idUsuario: usuario.idUsuario,
+      id: petId,
+      status: petStatus,
+      name: petName,
+      category: petCategory,
+      raza: petRace,
+      img: petPhoto,
+      state: petState,
+      date: petDate,
+      description: petDescription
+    }]);
+    console.log(datosBase)
     navigate('/reportes')
   }
 
@@ -34,62 +48,28 @@ const Publicar = () => {
             <h3>Visualizar Publicaciones</h3>
           </div>
 
-          {/*
+
           <form className='publicar-form'>
+            <diV className='form-content'>
+              <label className="form-label">Nombre</label>
+              <input type="text" onChange={(e) => setPetName(e.target.value)} className="form-input" placeholder='ingresa nombre' />
+            </diV>
+            <diV className='form-content'>
+              <label className="form-label">Raza</label>
+              <input type="text" onChange={(e) => setPetRace(e.target.value)} className="form-input" placeholder='ingresa su raza' />
+            </diV>
+            <diV className='form-content'>
+              <label className="form-label">Imagen</label>
+              <input type="text" onChange={(e) => SetPetPhoto(e.target.value)} className="form-input" placeholder='pega url de la foto' />
+            </diV>
+            <diV className='form-content'>
+              <label className="form-label">Descripción</label>
+              <input type="text" onChange={(e) => SetPetDescription(e.target.value)} className="form-input" placeholder='pega url de la foto' />
+            </diV>
 
-          <div className="form-content">
-              <select
-                className="form-control"
-                name="state"
-              >
-                <option value="perdida">Reportar mascota perdida</option>
-                <option value="encontrada">Reportar mascota encontrada</option>
-              </select>
-            </div>
-
-
-            <div className="form-content">
-              <select
-                className="form-control"
-                name="state"
-              >
-                <option value="pendiente">Perro</option>
-                <option value="completado">Gato</option>
-                <option value="completado">Conejo</option>
-              </select>
-            </div>
-
-            <div className="form-content" >
-              <label className="label-mail">Nombre de tu mascota</label>
-              <input className="label-input" type="text" placeholder='Ingresa nombre de la mascota' onChange={(e) => setPetName(e.target.value)} />
-            </div>
-
-
-
-            <div className="form-content" >
-              <label className="label-mail">Raza</label>
-              <input className="label-input" type="password" placeholder='Ingresa su raza' onChange={(e) => setUserMail(e.target.value)} />
-            </div>
-
-            <div className="form-content" >
-              <label className="label-mail">Descripción</label>
-              <textarea className="label-input" type="password" placeholder='describa a su mascota' onChange={(e) => setUserMail(e.target.value)} />
-            </div>
-
-            <div className="form-content" >
-            <input
-          type="file"
-          
-          onChange={(e) => SetPetPhoto(e.target.files)}
-        />
-         </div>
-            <button className='login-button'
-            >Publicar</button>
-          </form>
- */}
-          <form>
-            <input type="text" onChange={(e) => setDatoGato(e.target.value)} placeholder='ingresa nombre' />
-            <button className='login-button' onClick={() => publicarGato()}> Nuevo Gato</button>
+            <diV className='form-content'>
+              <button type='button' onClick={() => publicarReportes()} className='form-button'> Publicar Reporte</button>
+            </diV>
           </form>
         </div>
 

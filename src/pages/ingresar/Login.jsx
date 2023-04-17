@@ -12,6 +12,7 @@ const Login = () => {
 
 
   console.log(lstUsuarios)
+  console.log('conejo')
   console.log(usuario)
 
   const navigate = useNavigate();
@@ -29,7 +30,7 @@ const Login = () => {
         password: usuarioValido.password,
         telefono: usuarioValido.telefono,
       })
-      navigate('/homeprivado')
+      navigate('/reportes')
     } else {
 
       alert('usuario errado')
