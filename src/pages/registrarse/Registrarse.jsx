@@ -5,11 +5,11 @@ import { useNavigate } from 'react-router-dom';
 
 const Registrarse = () => {
 
-    //se llama a contexto y navigate
+    //llamado a contexto y navigate
     const { lstUsuarios, usuario, setUsuario } = useContext(Context);
     const navigate = useNavigate();
 
-    //se crean los estados para controlar los input
+    //creación de los estados para controlar los input
     const [user, setUser] = useState('');
     const [errorUser, setErrorUser] = useState('');
     const [email, setEmail] = useState('');
@@ -18,7 +18,7 @@ const Registrarse = () => {
     const [errorPassword, setErrorPassword] = useState('');
 
 
-    //se obtienen los datos de los input
+    //obtienen los datos de los input
     const handleUser = (e) => {
         setUser(e.target.value);
         setErrorUser('');

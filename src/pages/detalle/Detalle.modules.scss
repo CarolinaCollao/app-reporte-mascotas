@@ -27,25 +27,25 @@
         display: flex;
         padding: 2rem;
         height: 100%;
-       
+
         justify-content: center;
         align-items: center;
-        text-align:left;
+        text-align: left;
 
-        .header-card {  
+        .header-card {
             width: 35rem;
             margin: 0 6rem;
             text-align: center;
             justify-content: center;
             align-items: center;
             padding-top: 6rem;
- 
+
 
             .card-img {
-                
+
                 border-radius: 8px;
                 max-height: 200px;
-                
+
             }
         }
 
@@ -63,23 +63,50 @@
                 font-size: $md;
             }
 
-            .nombre-text {            
+            .nombre-text {
                 text-transform: capitalize;
             }
 
             .description-text {
-                margin-bottom: 0 1rem;
+
                 margin: 1rem;
-                font-family: $font-basic
+                font-family: $font-basic;
+                margin-bottom: 2rem;
             }
 
             .message-button {
                 @include button-ligth;
                 background-color: $bg-dark;
-                margin-top: 1rem;
-  
+                margin-top: 0.5rem;
+
             }
-    
+
+            .message-line {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                height: 2rem;
+                width: 90%;
+                border: none;
+            }
+
+            .message-text {
+                color: $text-dark;
+                height: 100%;
+                width: 100%;
+                font-family: $font-basic;
+                font-size: $sm;
+            }
+
+            .message-close {
+                height: 100%;
+                margin-left: 6rem;
+                color: $text-dark;
+                cursor: pointer;
+            }
+
+
+
 
             .detalle-button {
                 @include button-black;

@@ -5,11 +5,11 @@ import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
 
-  //se llama a contexto y navigate
+  //llamado a contexto y navigate
   const { lstUsuarios, usuario, setUsuario } = useContext(Context);
   const navigate = useNavigate();
 
-  //se crean los estados para controlar los input
+  //creacción de los estados para controlar los input
   const [userMail, setUserMail] = useState('');
   const [errorMail, setErrorMail] = useState('');
   const [userPassword, setUserPassword] = useState('');
