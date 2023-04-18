@@ -1,43 +1,48 @@
 
-import React, { useState, useEffect } from 'react';
-
-
 import './Prueba.modules.scss';
+import React, { useContext, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Context } from '../../context/Context';
+import '../../data/reportes.json'
+
 
 const Prueba = () => {
-  const data = ["Banana", "Orange", "Apple", "Mango"];
-  const [sortState, setSortState] = useState("none");
 
-  const sortMethods = {
-    none: { method: (a, b) => null },
-    ascending: { method: undefined },
-    descending: { method: (a, b) => (a > b ? -1 : 1) },
-  };
+  const { datosBase, setDatosBase } = useContext(Context);
+
+  const url = '../../src/data/reportes.json';
+
+  const consultarInformacion = async () => {
+    const response = await fetch(url);
+    const data = await response.json();
+    setDatosBase(data);
+  }
+
+  useEffect(() => {
+    consultarInformacion();
+  }, []);
+  console.log('prueba')
+  console.log(datosBase)
+
+  const [filter, setFilter] = useState("all");
+  const [search, setSearch] = useState("");
+
 
 
   return (
-    <>
-      <div className='container'>
-        <select defaultValue={'DEFAULT'} onChange={(e) => setSortState(e.target.value)}>
-          <option value="DEFAULT" disabled>Selecciona una opción</option>
-          <option value="ascending">Ascendente</option>
-          <option value="descending">Descendente</option>
-        </select>
+    <div className='container'>
+      <div className='content'>
 
-        <div className='content'>
-
-
-        <ul>
-        {data.sort(sortMethods[sortState].method).map((el, i) => (
-          <h3 key={i}>{el}</h3>
-        ))}
-      </ul>
-
-
+        <div>
+        <h1>pruebas</h1>
         </div>
+
+
+
       </div>
-    </>
-  )
+    </div>
+  );
+
 }
 
 export default Prueba

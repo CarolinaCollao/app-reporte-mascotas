@@ -9,10 +9,8 @@ const Reportes = () => {
 
   const { datosBase, setDatosBase } = useContext(Context);
 
-  const [search, setSearch] = useState('');
-
-  console.log('reportes')
-  console.log(datosBase)
+  const [filter, setFilter] = useState("all");
+  const [search, setSearch] = useState("");
 
   const url = '../../src/data/reportes.json';
 
@@ -26,80 +24,48 @@ const Reportes = () => {
     consultarInformacion();
   }, []);
 
-  const searcher = (e) => {
-    setSearch(e.target.value);
-    console.log(e.target.value)
-  }
+  console.log('reportes')
+  console.log(datosBase)
 
 
-  let results = [];
 
-  if (!search) {
-    results = datosBase
-  } else {
-    results = datosBase.filter((dato) =>
-      dato.category.toLowerCase().includes(search.toLowerCase()) ||
-      dato.raza.toLowerCase().includes(search.toLowerCase()))
-  }
+  return (
+    <>
+      <div className='reportes-container'>
 
+        <div className='reportes-content'>
 
-    const handleSubmitFormPrueba = () => {
-      const results= datosBase.filter((dato) =>
-        dato.category.toLowerCase().includes(search.toLowerCase()) ||
-        dato.raza.toLowerCase().includes(search.toLowerCase()))
-    }
+          <div className='reportes-input'>
 
-  
-
-    return (
-      <>
-        <div className='reportes-container'>
-          <div className='reportes-form'>
-            <form>
-              <label>Buscar por palabra clave </label>
-              <input
-                className="form-control"
-                type="text"
-                placeholder="Buscador"
-                value={search}
-                onChange={searcher}
-              />
-
-              <select
-                className="form-control"
-                name="state"
-              >
-                <option value="perro">Perro</option>
-                <option value="gato">Gato</option>
-                <option value="conejo">Conejo</option>
-              </select>
-              <div>
-                <button
-                  className="btn btn-primary"
-                  type="submit">
-                  filtrar
-                </button>
-              </div>
-            </form>
-
-            <form>
-            <label>Buscar por palabra clave </label>
-              <input
-                className="form-control"
-                type="text"
-                placeholder="Buscador"
-                value={search}
-                onChange={searcher}
-              />
-            </form>
-            <button >ordenar</button>
+            <div className='reportes-input-group'> 
+            <label htmlFor="search">Buscar:</label>
+            <input
+              type="text"
+              id="search"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+            />
           </div>
-          <div className='reportes-content'>
 
+          <div className='reportes-input-group'>
+            <label htmlFor="filter">Filtrar por Categoría:</label>
+            <select id="filter" onChange={(e) => setFilter(e.target.value)}>
+              <option value="all">Mostrar todos</option>
+              <option value="perro">Perro</option>
+              <option value="gato">Gato</option>
+              <option value="conejo">Conejo</option>
+            </select>
+          </div>
+          </div>
 
-
-            {
-              results.map(reporte => (
+          <div className='reportes-results'>
+            {datosBase
+              .filter(
+                (product) =>
+                  (filter === "all" || product.category === filter) &&
+                  product.category.toLowerCase().includes(search.toLowerCase())
+              )
+              .map((reporte) => (
                 <article key={reporte.id} className='card'>
 
                   <header className='header-card'>
@@ -116,16 +82,13 @@ const Reportes = () => {
                   </footer>
 
                 </article >
-              ))
-
-            }
-
-
+              ))}
           </div>
         </div>
+      </div>
 
-      </>
-    )
-  };
+    </>
+  )
+};
 
-  export default Reportes
+export default Reportes

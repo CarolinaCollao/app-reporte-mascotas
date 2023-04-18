@@ -20,7 +20,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
 
 
     .card {
@@ -34,17 +34,18 @@
 
         .header-card {  
             width: 35rem;
-            margin: 0 10rem;
+            margin: 0 6rem;
             text-align: center;
             justify-content: center;
-            padding-top: 8rem;
+            align-items: center;
+            padding-top: 6rem;
  
 
             .card-img {
+                
                 border-radius: 8px;
                 max-height: 200px;
-               
-
+                
             }
         }
 
@@ -72,7 +73,13 @@
                 font-family: $font-basic
             }
 
-
+            .message-button {
+                @include button-ligth;
+                background-color: $bg-dark;
+                margin-top: 1rem;
+  
+            }
+    
 
             .detalle-button {
                 @include button-black;

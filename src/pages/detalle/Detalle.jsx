@@ -37,6 +37,8 @@ const Detalle = () => {
              <p className='raza-text'>{reporteSelected.raza}</p>
             <p className='description-text'>{reporteSelected.description}</p>
 
+            <button  className='message-button'>Enviar un mensaje</button> 
+
            <button onClick={returnReportes} className='detalle-button'>Volver a reportes</button> 
           </footer>
 
