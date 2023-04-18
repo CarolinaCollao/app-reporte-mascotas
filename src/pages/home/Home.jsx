@@ -1,5 +1,4 @@
 import './Home.modules.scss'
-
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 

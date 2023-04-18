@@ -1,6 +1,4 @@
-import { NavLink } from 'react-router-dom';
 import './NotFound-modules.scss';
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 

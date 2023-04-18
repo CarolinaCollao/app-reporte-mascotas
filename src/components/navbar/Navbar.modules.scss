@@ -7,8 +7,7 @@
     height: 6.5rem;
     position: fixed;
     z-index: 5;
-    background-color: $secondary-color;
-    opacity: 0.5;
+    background-color: $primary-color;
 
 
     .navbar-logo {
@@ -91,23 +90,8 @@
         }
 
 
-
-
-
-
     }
 
 
 }
 
-@media screen and (max-width: 940px) {
-    .navbar {
-        background-color: rgb(46, 136, 106);
-    }
-}
-
-@media screen and (max-width: 495px) {
-    .navbar {
-        background-color: rgb(13, 73, 53);
-    }
-}

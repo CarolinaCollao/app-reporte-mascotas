@@ -1,11 +1,12 @@
+import './Perfil.modules.scss';
 import React, { useContext, useState } from 'react';
 import { Context } from '../../context/Context';
-import './Perfil.modules.scss';
 import { useNavigate } from 'react-router-dom';
 
 
 const Perfil = () => {
 
+   //llamado a contexto y navigate
   const { conectado, lstUsuarios, usuario, setUsuario, datosBase, setDatosBase } = useContext(Context);
   const navigateLogOut = useNavigate();
 
@@ -13,6 +14,7 @@ const Perfil = () => {
   console.log('perfil')
   console.log(usuario.idUsuario)
 
+  //creacción de los estados para controlar los input
   const [user, setUser] = useState(usuario.user);
   const [email, setEmail] = useState(usuario.email);
   const [telefono, setTelefono] = useState(usuario.telefono);
@@ -20,9 +22,11 @@ const Perfil = () => {
 
   console.log(usuario.idUsuario)
 
+   //identificción de los reportes del usuario conectado
   const reportesUsuario = datosBase.filter((reporte) => reporte.idUsuario === usuario.idUsuario);
   console.log(reportesUsuario)
 
+   //funcion de actualización del usuario conectado
   const actualizarUsuario = () => {
     const posicionUsuarioActual = lstUsuarios.findIndex((u) => u.id === u.idUsuario)
     console.log(posicionUsuarioActual)

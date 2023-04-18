@@ -7,13 +7,17 @@ import '../../data/reportes.json'
 
 const Reportes = () => {
 
+  //llamado a contexto 
   const { datosBase, setDatosBase } = useContext(Context);
 
+    //creación de los estados para controlar los input
   const [filter, setFilter] = useState("all");
   const [search, setSearch] = useState("");
 
+    //llamado a la api de reportes
   const url = '../../src/data/reportes.json';
 
+    //renderización de la data de la api de reportes
   const consultarInformacion = async () => {
     const response = await fetch(url);
     const data = await response.json();
@@ -38,7 +42,7 @@ const Reportes = () => {
           <div className='reportes-input'>
 
             <div className='reportes-input-group'> 
-            <label htmlFor="search">Buscar:</label>
+            <label htmlFor="search">Buscar </label>
             <input
               type="text"
               id="search"
@@ -48,7 +52,7 @@ const Reportes = () => {
           </div>
 
           <div className='reportes-input-group'>
-            <label htmlFor="filter">Filtrar por Categoría:</label>
+            <label htmlFor="filter">Filtrar por Categoría </label>
             <select id="filter" onChange={(e) => setFilter(e.target.value)}>
               <option value="all">Mostrar todos</option>
               <option value="perro">Perro</option>
