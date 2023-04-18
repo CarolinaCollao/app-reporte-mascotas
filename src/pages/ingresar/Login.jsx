@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
 
-  //e llama a contexto y navigate
+  //se llama a contexto y navigate
   const { lstUsuarios, usuario, setUsuario } = useContext(Context);
   const navigate = useNavigate();
 
@@ -16,11 +16,12 @@ const Login = () => {
   const [errorPassword, setErrorPassword] = useState('');
 
 
-
   console.log(lstUsuarios)
   console.log('Login')
   console.log(usuario)
 
+
+   //se obtienen los datos de los input
   const handleMail = (e) => {
     setUserMail(e.target.value);
     setErrorMail('');
