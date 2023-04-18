@@ -4,7 +4,7 @@
 
 .publicar-container {
     padding: auto;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     text-align: center;
     display: flex;
@@ -14,50 +14,104 @@
 
 .publicar-content {
     height: 80vh;
+    width: 100%;
     padding-top: 6rem;
     display: flex;
     flex-wrap: wrap;
-    justify-content: baseline;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+
+
 
     .publicar {
-
         display: flex;
         padding: 2rem;
         height: 100%;
-
+        align-items: center;
+        text-align: center;
 
         .publicar-vista {
-
+            display: block;
             height: 20rem;
-            width: 30rem;
+            width: 60%;
             background-color: $bg-green;
-            margin: 0 10rem;
+            padding-top: 4rem;
+            justify-content: space-around;
             align-items: center;
             text-align: center;
-            padding-top: 8rem;
+
+            .card {
+                width: 50rem;
+                display: flex;
+                justify-content:space-evenly;
+                align-items: center;
+                text-align: left;
+                padding-right: 4rem;
+
+                .header-card {
+                    text-align: center;
+                    justify-content: center;
+
+                    .card-img {
+                        border-radius: 8px;
+                        max-height: 150px;
+                    }
+                }
+
+                .footer-card {
+                    flex-direction: column;
+                    padding: 0 3rem;
+
+                    .raza-text {
+                        border-bottom: 1px solid $secondary-color;
+                        width: 20rem;
+                        color: $secondary-color;
+                        font-style: italic;
+                    }
+
+                    .nombre-text {
+                        text-transform: capitalize;
+                    }
+
+                    .description-text {
+                        color: rgb(14, 13, 12);
+                        font-family: $font-basic;
+                        width: 20rem;
+                    }
+
+
+                }
+
+
+            }
 
         }
 
-
         .publicar-form {
+            display: flex;
+            height: 100%;
             flex-direction: column;
-            margin-right: 2rem;
+            margin-left: 4rem;
+            
+
 
             .form-content {
                 display: block;
                 margin-bottom: 1rem;
 
+         
                 .form-input {
                     display: block;
-                    margin:  0.3rem;
+                    margin: 0.3rem;
                     height: 2rem;
                     flex-direction: column;
-                    width: 20rem;
+                    width: 25rem;
                     background-color: $bg-green;
                     border-radius: 30px;
                     border: none;
                     text-align: center;
-    
+
                 }
 
                 .form-input::placeholder {
@@ -69,8 +123,36 @@
                     border: 1px solid $secondary-color;
                 }
 
+                .form-input-textarea{
+                    display: block;
+                    margin: 0.3rem;
+                    width: 25rem;
+                    background-color: $bg-green;
+                    border-radius: none;
+                    border: none;
+                    text-align: left;
+                }
+
+              
+                }
+
+                 .form-content-inline {
+                    display: flex;
+
+                     .form-input-sm{
+                    margin: 0.3rem;
+                    height: 2rem;
+                    flex-direction: column;
+                    width: 8rem;
+                    background-color: $bg-green;
+                    border-radius: 30px;
+                    border: none;
+                    text-align: center;
+
+                }
+
             }
- 
+
             .form-button {
                 @include button-ligth;
                 background-color: $secondary-color;

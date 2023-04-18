@@ -11,7 +11,7 @@ const Reportes = () => {
 
   const [search, setSearch] = useState('');
 
-  console.log('chao')
+  console.log('reportes')
   console.log(datosBase)
 
   const url = '../../src/data/reportes.json';
@@ -48,6 +48,7 @@ const Reportes = () => {
         dato.category.toLowerCase().includes(search.toLowerCase()) ||
         dato.raza.toLowerCase().includes(search.toLowerCase()))
     }
+
   
 
     return (
@@ -91,6 +92,7 @@ const Reportes = () => {
                 onChange={searcher}
               />
             </form>
+            <button >ordenar</button>
           </div>
           <div className='reportes-content'>
 

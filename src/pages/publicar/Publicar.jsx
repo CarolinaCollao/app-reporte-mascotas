@@ -6,24 +6,38 @@ import { useNavigate } from 'react-router-dom';
 
 const Publicar = () => {
 
+  // aquí llamo al contexto
   const { usuario, setUsuario, datosBase, setDatosBase } = useContext(Context);
+
+  // aquí genero la constante para redirigir al usuario
   const navigate = useNavigate();
 
+  // aquí genero los estados para capturar los input
   const [petId, setPetId] = useState('');
   const [petStatus, setPetStatus] = useState('');
   const [petName, setPetName] = useState('');
-  const [petCategory, SetPetCategory] = useState('');
+  const [petCategory, setPetCategory] = useState('');
   const [petRace, setPetRace] = useState('');
   const [petPhoto, SetPetPhoto] = useState('');
   const [petState, setPetState] = useState('');
   const [petDate, setPetdate] = useState('');
-  const [petDescription, SetPetDescription] = useState('');
+  const [petDescription, setPetDescription] = useState('');
 
+  console.log('publicar')
+  console.log(petId)
+
+  // aquí creo un Id para la publicación basado en el número de objetos
+  let contador = 1;
+  for (let i = 0; i < datosBase.length; i++) {
+    if (datosBase[i]) contador++;
+  }
+
+  // aquí subo el nuevo objeto al final del array
   const publicarReportes = () => {
     setDatosBase([...datosBase,
     {
       idUsuario: usuario.idUsuario,
-      id: petId,
+      id: contador + 1,
       status: petStatus,
       name: petName,
       category: petCategory,
@@ -45,31 +59,65 @@ const Publicar = () => {
         <div className='publicar'>
 
           <div className='publicar-vista'>
-            <h3>Visualizar Publicaciones</h3>
+          <article key={petId} className='card'>
+
+          <header className='header-card'>
+            <img className='card-img' src={petPhoto} alt={petName} />
+          </header>
+
+
+          <footer className='footer-card'> 
+             <div> <h3 className='nombre-text'>{petName}</h3> </div>
+             <p className='raza-text'>{petRace}</p>
+             <p className='description-text'>{petDescription}</p>
+          </footer>
+
+        </article >
           </div>
 
 
+
           <form className='publicar-form'>
-            <diV className='form-content'>
+            <div className="form-content" >
+              <input type="checkbox" name="status" className='form-checkbox' id='inputCheck' checked="buscado" onChange={(e) => setPetStatus(e.target.value)} />
+              <label htmlFor="inputCheck" className='m-2'>Perdí una mascota</label>
+              <input type="checkbox" name="status" className='form-checkbox' id='inputCheck' checked="encontardo" onChange={(e) => setPetStatus(e.target.value)} />
+              <label htmlFor="inputCheck" className='m-2'>Encontré una mascota</label>
+            </div>
+
+            <select
+              className="form-input-select"
+              name="category"
+              value={datosBase.category}
+              onChange={(e) => setPetCategory(e.target.value)}
+            >
+              <option value="perro">Perro</option>
+              <option value="gato">Gato</option>
+              <option value="coneo">Conejo</option>
+            </select>
+
+            <div className="form-content" >
               <label className="form-label">Nombre</label>
               <input type="text" onChange={(e) => setPetName(e.target.value)} className="form-input" placeholder='ingresa nombre' />
-            </diV>
-            <diV className='form-content'>
+            </div>
+            <div className="form-content-inline"> 
+            <div className="form-content" >
               <label className="form-label">Raza</label>
-              <input type="text" onChange={(e) => setPetRace(e.target.value)} className="form-input" placeholder='ingresa su raza' />
-            </diV>
-            <diV className='form-content'>
+              <input type="text" onChange={(e) => setPetRace(e.target.value)} className="form-input-sm" placeholder='ingresa su raza' />
+            </div>
+            <div className="form-content" >
               <label className="form-label">Imagen</label>
-              <input type="text" onChange={(e) => SetPetPhoto(e.target.value)} className="form-input" placeholder='pega url de la foto' />
-            </diV>
-            <diV className='form-content'>
+              <input type="text" onChange={(e) => SetPetPhoto(e.target.value)} className="form-input-sm" placeholder='pega url de la foto' />
+            </div>
+            </div>
+            <div className="form-content" >
               <label className="form-label">Descripción</label>
-              <input type="text" onChange={(e) => SetPetDescription(e.target.value)} className="form-input" placeholder='pega url de la foto' />
-            </diV>
+              <textarea  rows="5" cols="33" onChange={(e) => setPetDescription(e.target.value)} className="form-input-textarea" placeholder='pega url de la foto' />
+            </div>
 
-            <diV className='form-content'>
+            <div className="form-content" >
               <button type='button' onClick={() => publicarReportes()} className='form-button'> Publicar Reporte</button>
-            </diV>
+            </div>
           </form>
         </div>
 

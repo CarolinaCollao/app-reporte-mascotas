@@ -6,26 +6,26 @@ import { useNavigate } from 'react-router-dom';
 
 const Perfil = () => {
 
-  const {conectado, lstUsuarios, usuario, setUsuario, datosBase, setDatosBase } = useContext(Context);
+  const { conectado, lstUsuarios, usuario, setUsuario, datosBase, setDatosBase } = useContext(Context);
   const navigateLogOut = useNavigate();
-  
+
   console.log(lstUsuarios)
-  console.log('tortuga')
+  console.log('perfil')
   console.log(usuario.idUsuario)
 
   const [user, setUser] = useState(usuario.user);
   const [email, setEmail] = useState(usuario.email);
   const [telefono, setTelefono] = useState(usuario.telefono);
   const [password, setPassword] = useState(usuario.password);
- 
- console.log(usuario.idUsuario)
 
- const reportesUsuario = datosBase.filter((reporte) => reporte.idUsuario === usuario.idUsuario);
- console.log(reportesUsuario)
+  console.log(usuario.idUsuario)
+
+  const reportesUsuario = datosBase.filter((reporte) => reporte.idUsuario === usuario.idUsuario);
+  console.log(reportesUsuario)
 
   const actualizarUsuario = () => {
-     const posicionUsuarioActual = lstUsuarios.findIndex((u) => u.id === u.idUsuario)
-  console.log(posicionUsuarioActual)
+    const posicionUsuarioActual = lstUsuarios.findIndex((u) => u.id === u.idUsuario)
+    console.log(posicionUsuarioActual)
     const usuarioActualizado = {
       conectado: true,
       id: usuario.idUsuario,

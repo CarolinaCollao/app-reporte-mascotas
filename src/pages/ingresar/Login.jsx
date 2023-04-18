@@ -12,7 +12,7 @@ const Login = () => {
 
 
   console.log(lstUsuarios)
-  console.log('conejo')
+  console.log('Login')
   console.log(usuario)
 
   const navigate = useNavigate();
