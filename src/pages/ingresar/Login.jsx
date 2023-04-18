@@ -11,43 +11,54 @@ const Login = () => {
 
   //se crean los estados para controlar los input
   const [userMail, setUserMail] = useState('');
+  const [errorMail, setErrorMail] = useState('');
   const [userPassword, setUserPassword] = useState('');
+  const [errorPassword, setErrorPassword] = useState('');
+
 
 
   console.log(lstUsuarios)
   console.log('Login')
   console.log(usuario)
 
+  const handleMail = (e) => {
+    setUserMail(e.target.value);
+    setErrorMail('');
+  };
 
-  //función para validar datos del usuario
+  const handlePassword = (e) => {
+    setUserPassword(e.target.value);
+    setErrorPassword('');
+  };
+
+
+  //función para validar campos y  datos del usuario
   const validarUsuario = () => {
+
     if (userMail === '') {
-      alert('ingrese un mail')
+      setErrorMail('Ingrese su correo electrónico')
     } if (userPassword === '') {
-      alert('ingrese una contraseña')
-    } else {
-
-      const usuarioValido = lstUsuarios.find((usuario) => usuario.email === userMail && usuario.password === userPassword)
-
-      if (usuarioValido) {
-        setUsuario({
-          conectado: true,
-          idUsuario: usuarioValido.idUsuario,
-          user: usuarioValido.user,
-          email: usuarioValido.email,
-          password: usuarioValido.password,
-          telefono: usuarioValido.telefono,
-        })
-        navigate('/reportes')
-      } else {
-
-        alert('usuario errado')
-        setConectado(false)
-      }
+      setErrorPassword('Ingrese su contraseña')
     }
 
-  }
+    const usuarioValido = lstUsuarios.find((usuario) => usuario.email === userMail && usuario.password === userPassword)
 
+    if (usuarioValido) {
+      setUsuario({
+        conectado: true,
+        idUsuario: usuarioValido.idUsuario,
+        user: usuarioValido.user,
+        email: usuarioValido.email,
+        password: usuarioValido.password,
+        telefono: usuarioValido.telefono,
+      })
+      navigate('/reportes')
+    } else {
+
+      alert('usuario errado')
+      setConectado(false)
+    }
+  }
 
 
   //función para redirigir al usuario a la vista de registrarse
@@ -62,12 +73,15 @@ const Login = () => {
         <form className='form'>
           <div className="form-content" >
             <label className="label-mail">Correo Electrónico</label>
-            <input className="form-input" type="email" placeholder='Ingresa tu mail' onChange={(e) => setUserMail(e.target.value)} />
+            <input className="form-input" type="email" placeholder='Ingresa tu mail' onChange={handleMail} />
+            <div className="error-line"> {errorMail && <span >{errorMail}</span>}</div>
           </div>
 
           <div className="form-content" >
             <label className="label-mail">Contraseña</label>
-            <input className="form-input" type="password" placeholder='Ingresa tu clave' onChange={(e) => setUserPassword(e.target.value)} />
+            <input className="form-input" type="password" placeholder='Ingresa tu clave' onChange={handlePassword} />
+            <div className="error-line">  {errorPassword && <span >{errorPassword}</span>}</div>
+           
           </div>
 
           <button type='button' className='login-button' onClick={() => validarUsuario()}>Ingresar</button>

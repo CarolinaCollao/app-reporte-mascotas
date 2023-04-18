@@ -55,6 +55,12 @@
                     border: 1px solid $secondary-color;
                 }
 
+                .error-line {
+                    height: 1rem;
+                    text-align: center;
+                    font-size: 0.8rem;
+                    color: red;
+                }
             }
 
             .login-button {
