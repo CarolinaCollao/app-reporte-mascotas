@@ -14,7 +14,6 @@ const Publicar = () => {
 
   // aquí genero los estados para capturar los input
   const [petId, setPetId] = useState('');
-  const [petStatus, setPetStatus] = useState('');
   const [petName, setPetName] = useState('');
   const [petCategory, setPetCategory] = useState('');
   const [petRace, setPetRace] = useState('');
@@ -38,7 +37,6 @@ const Publicar = () => {
     {
       idUsuario: usuario.idUsuario,
       id: contador + 1,
-      status: petStatus,
       name: petName,
       category: petCategory,
       raza: petRace,
@@ -50,6 +48,9 @@ const Publicar = () => {
     console.log(datosBase)
     navigate('/reportes')
   }
+
+  console.log('petCategory')
+  console.log(petCategory)
 
   return (
 
@@ -78,22 +79,15 @@ const Publicar = () => {
 
 
           <form className='publicar-form'>
-            <div className="form-content" >
-              <input type="checkbox" name="status" className='form-checkbox' id='inputCheck' checked="buscado" onChange={(e) => setPetStatus(e.target.value)} />
-              <label htmlFor="inputCheck" className='m-2'>Perdí una mascota</label>
-              <input type="checkbox" name="status" className='form-checkbox' id='inputCheck' checked="encontardo" onChange={(e) => setPetStatus(e.target.value)} />
-              <label htmlFor="inputCheck" className='m-2'>Encontré una mascota</label>
-            </div>
-
+        
             <select
               className="form-input-select"
               name="category"
-              value={datosBase.category}
               onChange={(e) => setPetCategory(e.target.value)}
             >
               <option value="perro">Perro</option>
               <option value="gato">Gato</option>
-              <option value="coneo">Conejo</option>
+              <option value="conejo">Conejo</option>
             </select>
 
             <div className="form-content" >
@@ -112,7 +106,7 @@ const Publicar = () => {
             </div>
             <div className="form-content" >
               <label className="form-label">Descripción</label>
-              <textarea  rows="5" cols="33" onChange={(e) => setPetDescription(e.target.value)} className="form-input-textarea" placeholder='pega url de la foto' />
+              <textarea  rows="5" cols="33" onChange={(e) => setPetDescription(e.target.value)} className="form-input-textarea" placeholder='ingresa la descripción de tu mascota' />
             </div>
 
             <div className="form-content" >

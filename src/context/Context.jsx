@@ -1,5 +1,4 @@
 import React, { createContext, useState, useEffect } from "react";
-import '../data/publicaciones.json';
 
 
 
@@ -10,7 +9,7 @@ export const ContextProvider = (props) => {
     const [usuario, setUsuario] = useState({});
     const [datosBase, setDatosBase] = useState([]);
 
-    const [lstProductos, setLstProductos] = useState([]);
+   
 
     const lstUsuarios = [
         {
@@ -31,7 +30,7 @@ export const ContextProvider = (props) => {
         },
     ]
 
-    const globalContext = { lstUsuarios, usuario, setUsuario, lstProductos, setLstProductos, datosBase, setDatosBase }
+    const globalContext = { lstUsuarios, usuario, setUsuario, datosBase, setDatosBase }
 
     return (
         <Context.Provider value={globalContext}>
