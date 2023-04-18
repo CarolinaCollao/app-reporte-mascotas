@@ -5,8 +5,11 @@ import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
 
+  //e llama a contexto y navigate
   const { lstUsuarios, usuario, setUsuario } = useContext(Context);
+  const navigate = useNavigate();
 
+  //se crean los estados para controlar los input
   const [userMail, setUserMail] = useState('');
   const [userPassword, setUserPassword] = useState('');
 
@@ -15,30 +18,39 @@ const Login = () => {
   console.log('Login')
   console.log(usuario)
 
-  const navigate = useNavigate();
 
+  //función para validar datos del usuario
   const validarUsuario = () => {
-
-    const usuarioValido = lstUsuarios.find((usuario) => usuario.email === userMail && usuario.password === userPassword)
-
-    if (usuarioValido) {
-      setUsuario({
-        conectado: true,
-        idUsuario: usuarioValido.idUsuario,
-        user: usuarioValido.user,
-        email: usuarioValido.email,
-        password: usuarioValido.password,
-        telefono: usuarioValido.telefono,
-      })
-      navigate('/reportes')
+    if (userMail === '') {
+      alert('ingrese un mail')
+    } if (userPassword === '') {
+      alert('ingrese una contraseña')
     } else {
 
-      alert('usuario errado')
-      setConectado(false)
+      const usuarioValido = lstUsuarios.find((usuario) => usuario.email === userMail && usuario.password === userPassword)
+
+      if (usuarioValido) {
+        setUsuario({
+          conectado: true,
+          idUsuario: usuarioValido.idUsuario,
+          user: usuarioValido.user,
+          email: usuarioValido.email,
+          password: usuarioValido.password,
+          telefono: usuarioValido.telefono,
+        })
+        navigate('/reportes')
+      } else {
+
+        alert('usuario errado')
+        setConectado(false)
+      }
     }
+
   }
 
 
+
+  //función para redirigir al usuario a la vista de registrarse
   const handleRegistrarse = () => {
     navigate('/registrarse')
   }

@@ -2,6 +2,7 @@ import React, { createContext, useState, useEffect } from "react";
 
 
 
+
 export const Context = createContext({});
 
 export const ContextProvider = (props) => {
@@ -9,7 +10,7 @@ export const ContextProvider = (props) => {
     const [usuario, setUsuario] = useState({});
     const [datosBase, setDatosBase] = useState([]);
 
-   
+    const [lstProductos, setLstProductos] = useState([]);
 
     const lstUsuarios = [
         {
@@ -30,7 +31,7 @@ export const ContextProvider = (props) => {
         },
     ]
 
-    const globalContext = { lstUsuarios, usuario, setUsuario, datosBase, setDatosBase }
+    const globalContext = { lstUsuarios, usuario, setUsuario, lstProductos, setLstProductos, datosBase, setDatosBase}
 
     return (
         <Context.Provider value={globalContext}>
