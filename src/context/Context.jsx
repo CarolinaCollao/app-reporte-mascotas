@@ -12,6 +12,24 @@ export const ContextProvider = (props) => {
 
     const [lstProductos, setLstProductos] = useState([]);
 
+       //llamado a la api de reportes
+  const url = '../../src/data/reportes.json';
+
+  //renderización de la data de la api de reportes
+const consultarInformacion = async () => {
+  const response = await fetch(url);
+  const data = await response.json();
+  setDatosBase(data);
+}
+
+useEffect(() => {
+  consultarInformacion();
+}, []);
+
+console.log('context')
+console.log(datosBase)
+
+
     const lstUsuarios = [
         {
             idUsuario: '1',

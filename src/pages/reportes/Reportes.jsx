@@ -14,24 +14,6 @@ const Reportes = () => {
   const [filter, setFilter] = useState("all");
   const [search, setSearch] = useState("");
 
-    //llamado a la api de reportes
-  const url = '../../src/data/reportes.json';
-
-    //renderización de la data de la api de reportes
-  const consultarInformacion = async () => {
-    const response = await fetch(url);
-    const data = await response.json();
-    setDatosBase(data);
-  }
-
-  useEffect(() => {
-    consultarInformacion();
-  }, []);
-
-  console.log('reportes')
-  console.log(datosBase)
-
-
 
   return (
     <>

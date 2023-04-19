@@ -41,7 +41,6 @@ const Publicar = () => {
       category: petCategory,
       raza: petRace,
       img: petPhoto,
-      state: petState,
       date: petDate,
       description: petDescription
     }]);
