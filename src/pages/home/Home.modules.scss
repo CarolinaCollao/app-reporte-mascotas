@@ -14,7 +14,7 @@
         width: 100%;
         height: 100%;
         background: url('../../assets/img/home-1.jpg') no-repeat center/cover;
-        padding-left: 3rem;
+        padding-left: 8rem;
         opacity: 0.8;
         display: flex;
         align-items: center;
@@ -43,33 +43,73 @@
 }
 
 
-.categorias-container {
-    height: 50vh;
-    text-align: center;
-    display: flex;
+.bottom-container {
+    height: 60vh;
     background-color: $bg-ligth;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 
-    .categoria-content {
 
+    .bottom-content {
         height: 100%;
         width: 100%;
-        display: flex;
         align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 2rem;
 
+        .bottom-text {
+            font-family: $font-basic;
+            font-weight: 300;
+        }
+
+        .categoria-view {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
 
         .categoria-item {
-            width: 10rem;
-            height: 10rem;
-            background-color: $secondary-color;
+            margin: 1rem 4rem;
             border-radius: 50%;
-            align-content: center;
+            align-items: center;
             justify-content: center;
-            margin: auto;
-            padding-top: 2.5rem;
-            font-size: 1.5rem;
-            color: $bg-ligth;
-            font-family: $font-basic;
-            text-transform: uppercase;
+            text-align: center;
+
+
+            .categoria-img-1{
+                background: url('../../assets/img/imgHome-01.png') no-repeat center/cover;
+                width: 10rem;
+                height: 10rem;
+                border-radius: 50%;
+            }
+            
+            .categoria-img-2{
+                background: url('../../assets/img/imgHome-02.png') no-repeat center/cover;
+                width: 10rem;
+                height: 10rem;
+                border-radius: 50%;
+            }
+            
+            .categoria-img-3{
+                background: url('../../assets/img/imgHome-03.png') no-repeat center/cover;
+                width: 10rem;
+                height: 10rem;
+                border-radius: 50%;
+            }
+
+            .categoria-text {
+                width: 10rem;
+                margin-top: 0.5rem;
+                font-family: $font-basic;
+                font-size: 1rem;
+                color: $secondary-color;
+            }
+
         }
+
+
     }
 }

@@ -6,6 +6,7 @@ import { NavLink } from 'react-router-dom';
 import { FaFacebookSquare, FaInstagramSquare, FaTwitterSquare } from "react-icons/fa";
 
 
+
 const Navbar = () => {
 
    //llamado a contexto, navigate y params
@@ -29,9 +30,7 @@ const Navbar = () => {
 
         <div className='navbar-container'>
 
-          <div className='navbar-logo'>
-            LOGO
-          </div>
+          <div className='navbar-logo'> Macotas S.O.S</div>
 
           <div className='navbar-menu' >
 

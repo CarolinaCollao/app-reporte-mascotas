@@ -15,7 +15,7 @@
         align-items: center;
         margin: 1rem;
         color: $text-ligth;
-        font-family: $font-fantasy;
+        font-family: $font-basic;
         font-size: $md;
     }
 
@@ -36,7 +36,7 @@
                     justify-content: flex-end;
                     align-items: center;
                     color: $text-ligth;
-                  
+
 
                     .social-icon {
                         font-size: 1.5rem;
@@ -56,7 +56,8 @@
 
 
                 .button-black {
-                    @include button-black;
+                    @include button-ligth;
+                    background-color: rgb(196, 118, 62);
                     width: 6rem;
 
                 }
@@ -94,4 +95,3 @@
 
 
 }
-

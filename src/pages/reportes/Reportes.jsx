@@ -2,7 +2,6 @@ import './Reportes.modules.scss';
 import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Context } from '../../context/Context';
-import '../../data/reportes.json'
 
 
 const Reportes = () => {
