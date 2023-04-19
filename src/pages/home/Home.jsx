@@ -22,15 +22,15 @@ const Home = () => {
           <div className='bottom-text'> <h3 className='bottom-text'>¿Qué puedes reportar en nuestra web?</h3></div>
           <div className='categoria-view'>
             <div className='categoria-item'>
-              <div className='categoria-img-1'></div><p className='categoria-text'>Puedes reportar a tu mascota perdida</p>
+              <div className='categoria-img-1'></div><p className='categoria-text'>Puedes reportar una mascota perdida o encontrada</p>
             </div>
 
             <div className='categoria-item'>
-              <div className='categoria-img-2'></div><p className='categoria-text'>Puedes aportar con información</p>
+              <div className='categoria-img-2'></div><p className='categoria-text'>Aportar información respecto a su paradero</p>
             </div>
 
             <div className='categoria-item'>
-              <div className='categoria-img-3'></div><p className='categoria-text'>Puedes reportar a tu mascota perdida</p>
+              <div className='categoria-img-3'></div><p className='categoria-text'>Puedes compartir los reportes con tus amigos</p>
             </div>
           </div>
         </div>
