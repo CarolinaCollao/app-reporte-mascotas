@@ -71,7 +71,7 @@ const Perfil = () => {
               </div>
 
               <div className='data-name' >
-                <label className="form-label">Contraseña</label>
+                <label className="form-label">Teléfono</label>
                 <input className="form-input" type="texto"
                   value={telefono}
                   onChange={(e) => setTelefono(e.target.value)} />
