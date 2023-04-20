@@ -12,7 +12,7 @@ export const ContextProvider = (props) => {
 
 
     //llamado a la api de reportes
-    const url = 'https://app-reporte-mascotas.vercel.app/reportes.json';
+    const url = window.location.origin +'/reportes.json';
 
     //renderización de la data de la api de reportes
     const consultarInformacion = async () => {
