@@ -1,30 +1,32 @@
 import React, { createContext, useState, useEffect } from "react";
+import '../data/reportes.json'
 
 export const Context = createContext({});
 
 export const ContextProvider = (props) => {
 
+
+
     const [usuario, setUsuario] = useState({});
     const [datosBase, setDatosBase] = useState([]);
-    
 
 
-       //llamado a la api de reportes
-       const url = 'http://localhost:reportes.json';
+    //llamado a la api de reportes
+    const url = 'http://localhost:5173/reportes.json';
 
-  //renderización de la data de la api de reportes
-const consultarInformacion = async () => {
-  const response = await fetch(url);
-  const data = await response.json();
-  setDatosBase(data);
-}
+    //renderización de la data de la api de reportes
+    const consultarInformacion = async () => {
+        const response = await fetch(url);
+        const data = await response.json();
+        setDatosBase(data);
+    }
 
-useEffect(() => {
-  consultarInformacion();
-}, []);
+    useEffect(() => {
+        consultarInformacion();
+    }, []);
 
-console.log('context')
-console.log(datosBase)
+    console.log('context')
+    console.log(datosBase)
 
 
     const lstUsuarios = [
@@ -46,7 +48,7 @@ console.log(datosBase)
         },
     ]
 
-    const globalContext = { lstUsuarios, usuario, setUsuario,  datosBase, setDatosBase}
+    const globalContext = { lstUsuarios, usuario, setUsuario, datosBase, setDatosBase }
 
     return (
         <Context.Provider value={globalContext}>
