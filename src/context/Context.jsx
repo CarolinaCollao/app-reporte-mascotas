@@ -1,6 +1,4 @@
 import React, { createContext, useState, useEffect } from "react";
-import '../../src/data/reportes.json';
-
 
 export const Context = createContext({});
 
@@ -8,10 +6,11 @@ export const ContextProvider = (props) => {
 
     const [usuario, setUsuario] = useState({});
     const [datosBase, setDatosBase] = useState([]);
+    
 
 
        //llamado a la api de reportes
-       const url = '../../src/data/reportes.json';
+       const url = 'http://localhost:5173/reportes.json';
 
   //renderización de la data de la api de reportes
 const consultarInformacion = async () => {
