@@ -10,7 +10,7 @@ export const ContextProvider = (props) => {
 
 
        //llamado a la api de reportes
-       const url = 'http://localhost:5173/reportes.json';
+       const url = 'http://localhost:reportes.json';
 
   //renderización de la data de la api de reportes
 const consultarInformacion = async () => {
