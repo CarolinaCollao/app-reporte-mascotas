@@ -1,5 +1,5 @@
 import React, { createContext, useState, useEffect } from "react";
-import '../data/reportes.json'
+
 
 export const Context = createContext({});
 
